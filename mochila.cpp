@@ -5,7 +5,7 @@ struct elementos{
  int peso;
  int beneficio;
 } ;
-void imprimirEst(elementos e[5],int n)
+void imprimirEst(elementos *e,int n)
 {
     cout<<"Elementos que se tienen ordenados por mayor beneficio"<<endl;
     for(int i=0;i<n;i++)
@@ -23,7 +23,7 @@ void imprimirMochila(vector<elementos> mochila)
         cout<<"beneficio: "<<mochila.at(i).beneficio<<endl;
     }
 }
-void agregarMochila(elementos e[5], int n , int pesomax, vector <elementos> mochila)
+void agregarMochila(elementos *e, int n , int pesomax, vector <elementos> mochila)
 {
    int pesoencurso=0, i=0;
    cout<<"Peso maximo de la mochila: "<<pesomax<<endl;
@@ -38,7 +38,7 @@ void agregarMochila(elementos e[5], int n , int pesomax, vector <elementos> moch
    }
    imprimirMochila(mochila);
 }
-void ordenarMochila(elementos e[5], int n)
+void ordenarMochila(elementos *e, int n)
 {
     for(int i=0;i<n;i++)
     {
