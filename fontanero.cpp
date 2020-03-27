@@ -7,7 +7,6 @@ struct trabajos{
 };
 void imprimirEst(trabajos *e,int n)
 {
-    cout<<"Ordenes a completar"<<endl;
     for(int i=0;i<n;i++)
     {
        cout<<"tiempo: "<< e[i].tiempo<<endl;
@@ -28,7 +27,6 @@ void OrdenarTiempo(trabajos *e, int n)
             }
         }
     }
-    imprimirEst(e,n);
 }
 void realizarTrabajo(trabajos *e, int numerodeTrabajos)
 {
@@ -39,16 +37,25 @@ void realizarTrabajo(trabajos *e, int numerodeTrabajos)
         if(tiempoEspera<(e[i].tiempo*1.5))
         {
             e[i].satisfaccio = "Satisfecho";
+        cout<<"tiempo de trabajo: "<< e[i].tiempo<<endl;
+         cout<<"tiempo que tardo: "<< tiempoEspera<<endl;
+        cout<< "satisfaccion: "<<e[i].satisfaccio<<endl;
         }
         else if(tiempoEspera>(e[i].tiempo*1.5)&&tiempoEspera<(e[i].tiempo*2))
         {
-            e[i].satisfaccio = "Medio Satisfecho";
+         e[i].satisfaccio = "Medio Satisfecho";
+        cout<<"tiempo de trabajo: "<< e[i].tiempo<<endl;
+        cout<<"tiempo que tardo: "<< tiempoEspera<<endl;
+        cout<< "satisfaccion: "<<e[i].satisfaccio<<endl;
         }
         else{
             e[i].satisfaccio = "No Satisfecho";
+            cout<<"tiempo de trabajo: "<< e[i].tiempo<<endl;
+            cout<<"tiempo que tardo: "<< tiempoEspera<<endl;
+            cout<< "satisfaccion: "<<e[i].satisfaccio<<endl;
         }
+        cout<<endl;
     }
-    imprimirEst(e,numerodeTrabajos);
 }
 int main()
 {
@@ -59,6 +66,5 @@ int main()
     Clientes[3].tiempo=5;
     OrdenarTiempo(Clientes,4);
     realizarTrabajo(Clientes,4);
-   
     return 0;
 }
